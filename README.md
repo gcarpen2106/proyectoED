@@ -1,2 +1,2 @@
 # proyectoED
-Realizado por Pablo Muiño Rodriguez , Gonzalo Carretero Peñalosa y Victor Quiros Pavon
+Realizado por Pablo Muiño Rodriguez , Gonzalo Carretero Peñalosa y Víctor Quirós Pavón
