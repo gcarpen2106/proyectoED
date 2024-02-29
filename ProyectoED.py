@@ -1,4 +1,3 @@
-
 from modulos import LeerPartidos, impClasificacion, Equipos, InfoEquipos
 
 datosliga = 'liga.csv'
@@ -9,9 +8,12 @@ from modulos import LeerPartidos, impClasificacion, Equipos, InfoEquipos
 datosliga = 'liga.csv'
 
 
+
 from modulos import LeerPartidos, impClasificacion, Equipos, InfoEquipos
 
 datosliga = 'liga.csv'
+
+
 
 
 liga = LeerPartidos()
@@ -19,6 +21,19 @@ liga = LeerPartidos()
 print("Partidos:")
 
 impClasificacion(liga)
+
+
+equipos = Equipos(datosliga)
+
+print("\n")
+
+print("Equipos:",equipos)
+
+info = InfoEquipos(liga,equipos)
+
+print("\n")
+
+print("Clasificación:",info)
 
 
 equipos = Equipos(datosliga)
@@ -58,6 +73,4 @@ from modulos import LeerPartidos, impClasificacion, Equipos, InfoEquipos
 datosliga = 'liga.csv'
 
 liga = LeerPartidos()
-
-
 
