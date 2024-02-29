@@ -10,6 +10,24 @@ def LeerPartidos():
             lista.append(i)
     return lista
 
+
+
+
+def LeerPartidos():
+    lista = []
+    with open ("liga.csv","r") as fichero:
+        contenido = csv.DictReader(fichero, delimiter=",")
+        next(contenido)
+
+        for i in contenido:
+            lista.append(i)
+    return lista
+
+def impClasificacion(liga):
+    for i in liga:
+        print(i)
+
+
 def impClasificacion(liga):
     for i in liga:
         print(i)
@@ -22,6 +40,10 @@ def Equipos(datosliga):
             equipos.append(row['Team 1'])
             
     return set(equipos)
+
+
+
+
 
 def InfoEquipos(datosliga, equipos):
     info_equipos = []
@@ -42,6 +64,7 @@ def InfoEquipos(datosliga, equipos):
             elif partido['Team 2'] == equipo: 
                 
                 resultados.append(quienGana(partido['FT']))
+
             
             puntos = Puntos(resultados)
 
@@ -49,7 +72,9 @@ def InfoEquipos(datosliga, equipos):
         datos_individual.append(puntos)
         datos.append(datos_individual)
 
+
     Clasificacion(datos)
+
 
     return datos
 
@@ -60,6 +85,7 @@ def quienGana(resultado):
         return 0
     else:
         return -1
+
 
 def Puntos(info):
     puntos = 0
@@ -74,5 +100,11 @@ def Puntos(info):
     
     return puntos
 
+
 def Clasificacion(datos):
     datos.sort(key=lambda datos: datos[1], reverse=True)
+
+def InfoEquipos(datosliga, equipos):
+    info_equipos = []
+    datos = []
+
