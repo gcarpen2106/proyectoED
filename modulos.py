@@ -1,46 +1,5 @@
 import csv
 
-def LeerPartidos():
-    lista = []
-    with open ("liga.csv","r") as fichero:
-        contenido = csv.DictReader(fichero, delimiter=",")
-        next(contenido)
-
-        for i in contenido:
-            lista.append(i)
-    return lista
-
-def impClasificacion(liga):
-    for i in liga:
-        print(i)
-
-def Equipos(datosliga):
-    equipos = []
-    with open(datosliga, 'r') as f:
-        reader = csv.DictReader(f, delimiter=",")
-        for row in reader:
-            equipos.append(row['Team 1'])
-            
-    return set(equipos)
-
-def InfoEquipos(datosliga, equipos):
-    info_equipos = []
-
-    for equipo in equipos:
-
-        resultados = []
-        puntos = 0
-
-        for partido in datosliga:
-
-            if partido['Team 1'] == equipo: 
-
-                resultados.append(quienGana(partido['FT']))
-
-            elif partido['Team 2'] == equipo: 
-                
-                resultados.append(quienGana(partido['FT']))
-
 def quienGana(resultado):
     if resultado[0] > resultado[2]:
         return 1
