@@ -11,6 +11,7 @@ def LeerPartidos():
     return lista
 
 
+
 def LeerPartidos():
     lista = []
     with open ("liga.csv","r") as fichero:
@@ -39,6 +40,7 @@ def Equipos(datosliga):
     return set(equipos)
 
 
+
 def InfoEquipos(datosliga, equipos):
     info_equipos = []
     datos = []
@@ -59,6 +61,14 @@ def InfoEquipos(datosliga, equipos):
                 
                 resultados.append(quienGana(partido['FT']))
 
+            
+            puntos = Puntos(resultados)
+
+        datos_individual.append(equipo)
+        datos_individual.append(puntos)
+        datos.append(datos_individual)
+
+
     return datos
 
 def quienGana(resultado):
@@ -68,6 +78,20 @@ def quienGana(resultado):
         return 0
     else:
         return -1
+
+
+def Puntos(info):
+    puntos = 0
+
+    for punto in info:
+        if punto == 1:
+            puntos += 3
+        elif punto == 0:
+            puntos += 1
+        else:
+            puntos += 0
+    
+    return puntos
 
 
 def InfoEquipos(datosliga, equipos):
