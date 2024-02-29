@@ -14,6 +14,7 @@ def impClasificacion(liga):
     for i in liga:
         print(i)
 
+
 def Equipos(datosliga):
     equipos = []
     with open(datosliga, 'r') as f:
