@@ -9,3 +9,8 @@ def LeerPartidos():
         for i in contenido:
             lista.append(i)
     return lista
+
+def impClasificacion(liga):
+    for i in liga:
+        print(i)
+
